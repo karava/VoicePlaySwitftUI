@@ -5,22 +5,14 @@
 
 import Foundation
 import SwiftUI
-import Combine
 import AVFoundation
 
-class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
+class AudioPlayerVM: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
-    let objectWillChange = PassthroughSubject<AudioPlayer, Never>()
+    @Published var isPlaying = false
+    @Published var audioPlayer: AVAudioPlayer!
     
-    var isPlaying = false {
-        didSet {
-            objectWillChange.send(self)
-        }
-    }
-    
-    var audioPlayer: AVAudioPlayer!
-    
-    func startPlayback (audio: URL) {
+    func startPlayback(audio: URL) {
         
         let playbackSession = AVAudioSession.sharedInstance()
         

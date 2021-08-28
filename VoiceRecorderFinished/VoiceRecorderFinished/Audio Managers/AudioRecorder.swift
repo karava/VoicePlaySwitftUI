@@ -15,17 +15,10 @@ class AudioRecorder: NSObject,ObservableObject {
         fetchRecordings()
     }
     
-    let objectWillChange = PassthroughSubject<AudioRecorder, Never>()
-    
     var audioRecorder: AVAudioRecorder!
     
-    var recordings = [Recording]()
-    
-    var recording = false {
-        didSet {
-            objectWillChange.send(self)
-        }
-    }
+    @Published var recordings = [Recording]()
+    @Published var recording = false
     
     func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
@@ -77,7 +70,7 @@ class AudioRecorder: NSObject,ObservableObject {
         
         recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
         
-        objectWillChange.send(self)
+        // objectWillChange.send(self)
     }
     
     func deleteRecording(urlsToDelete: [URL]) {

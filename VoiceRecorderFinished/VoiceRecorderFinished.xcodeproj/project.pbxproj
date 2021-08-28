@@ -14,13 +14,25 @@
 		4567B73423683F75001B9D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4567B73223683F75001B9D3E /* LaunchScreen.storyboard */; };
 		4567B73F23683F76001B9D3E /* VoiceRecorderFinishedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B73E23683F76001B9D3E /* VoiceRecorderFinishedTests.swift */; };
 		4567B74A23683F76001B9D3E /* VoiceRecorderFinishedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B74923683F76001B9D3E /* VoiceRecorderFinishedUITests.swift */; };
-		4567B75D23683F93001B9D3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75723683F93001B9D3E /* ContentView.swift */; };
+		4567B75D23683F93001B9D3E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75723683F93001B9D3E /* HomeView.swift */; };
 		4567B75E23683F93001B9D3E /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75823683F93001B9D3E /* AudioRecorder.swift */; };
 		4567B75F23683F93001B9D3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75923683F93001B9D3E /* Extensions.swift */; };
 		4567B76023683F93001B9D3E /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75A23683F93001B9D3E /* RecordingDataModel.swift */; };
 		4567B76123683F93001B9D3E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75B23683F93001B9D3E /* Helper.swift */; };
 		4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75C23683F93001B9D3E /* RecordingsList.swift */; };
-		4567B76723688406001B9D3E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B76623688406001B9D3E /* AudioPlayer.swift */; };
+		4567B76723688406001B9D3E /* AudioPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B76623688406001B9D3E /* AudioPlayerVM.swift */; };
+		F0C0CC7326D4E445002C99F4 /* RecordingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC7226D4E445002C99F4 /* RecordingRow.swift */; };
+		F0C0CC7726D4E740002C99F4 /* RecordingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC7626D4E740002C99F4 /* RecordingDetail.swift */; };
+		F0C0CC7E26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0C0CC7D26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0C0CC8426D4EE25002C99F4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC8226D4EE25002C99F4 /* Interface.storyboard */; };
+		F0C0CC8626D4EE26002C99F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC8526D4EE26002C99F4 /* Assets.xcassets */; };
+		F0C0CC8D26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F0C0CC8C26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0C0CC9226D4EE26002C99F4 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9126D4EE26002C99F4 /* HostingController.swift */; };
+		F0C0CC9426D4EE26002C99F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9326D4EE26002C99F4 /* ContentView.swift */; };
+		F0C0CC9626D4EE26002C99F4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9526D4EE26002C99F4 /* ExtensionDelegate.swift */; };
+		F0C0CC9826D4EE26002C99F4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9726D4EE26002C99F4 /* ComplicationController.swift */; };
+		F0C0CC9A26D4EE27002C99F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */; };
+		F0C0CC9D26D4EE27002C99F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +50,46 @@
 			remoteGlobalIDString = 4567B72323683F74001B9D3E;
 			remoteInfo = VoiceRecorderFinished;
 		};
+		F0C0CC7F26D4EE25002C99F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4567B71C23683F74001B9D3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0C0CC7C26D4EE25002C99F4;
+			remoteInfo = "VoiceRecorder watchOS WatchKit App";
+		};
+		F0C0CC8E26D4EE26002C99F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4567B71C23683F74001B9D3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0C0CC8B26D4EE26002C99F4;
+			remoteInfo = "VoiceRecorder watchOS WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0C0CCA226D4EE27002C99F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0C0CC8D26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0C0CCA626D4EE27002C99F4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F0C0CC7E26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4567B72423683F74001B9D3E /* VoiceRecorderFinished.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecorderFinished.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,13 +105,28 @@
 		4567B74523683F76001B9D3E /* VoiceRecorderFinishedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceRecorderFinishedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4567B74923683F76001B9D3E /* VoiceRecorderFinishedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderFinishedUITests.swift; sourceTree = "<group>"; };
 		4567B74B23683F76001B9D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4567B75723683F93001B9D3E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4567B75723683F93001B9D3E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4567B75823683F93001B9D3E /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		4567B75923683F93001B9D3E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4567B75A23683F93001B9D3E /* RecordingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
 		4567B75B23683F93001B9D3E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4567B75C23683F93001B9D3E /* RecordingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
-		4567B76623688406001B9D3E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		4567B76623688406001B9D3E /* AudioPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerVM.swift; sourceTree = "<group>"; };
+		F0C0CC7226D4E445002C99F4 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
+		F0C0CC7626D4E740002C99F4 /* RecordingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDetail.swift; sourceTree = "<group>"; };
+		F0C0CC7A26D4EE25002C99F4 /* VoiceRecorder watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceRecorder watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C0CC7D26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceRecorder watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C0CC8326D4EE25002C99F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F0C0CC8526D4EE26002C99F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C0CC8726D4EE26002C99F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0C0CC8C26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "VoiceRecorder watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C0CC9126D4EE26002C99F4 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		F0C0CC9326D4EE26002C99F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F0C0CC9526D4EE26002C99F4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F0C0CC9726D4EE26002C99F4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0C0CC9E26D4EE27002C99F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +151,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0C0CC8926D4EE26002C99F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +167,8 @@
 				4567B72623683F74001B9D3E /* VoiceRecorderFinished */,
 				4567B73D23683F76001B9D3E /* VoiceRecorderFinishedTests */,
 				4567B74823683F76001B9D3E /* VoiceRecorderFinishedUITests */,
+				F0C0CC8126D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App */,
+				F0C0CC9026D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension */,
 				4567B72523683F74001B9D3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +179,9 @@
 				4567B72423683F74001B9D3E /* VoiceRecorderFinished.app */,
 				4567B73A23683F76001B9D3E /* VoiceRecorderFinishedTests.xctest */,
 				4567B74523683F76001B9D3E /* VoiceRecorderFinishedUITests.xctest */,
+				F0C0CC7A26D4EE25002C99F4 /* VoiceRecorder watchOS.app */,
+				F0C0CC7D26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app */,
+				F0C0CC8C26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,8 +231,9 @@
 		4567B76323686A97001B9D3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4567B75723683F93001B9D3E /* ContentView.swift */,
-				4567B75C23683F93001B9D3E /* RecordingsList.swift */,
+				F0C0CC7126D4E42C002C99F4 /* Rows */,
+				F0C0CC7426D4E67D002C99F4 /* HomeView */,
+				F0C0CC7526D4E712002C99F4 /* RecordingDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				4567B75823683F93001B9D3E /* AudioRecorder.swift */,
-				4567B76623688406001B9D3E /* AudioPlayer.swift */,
+				4567B76623688406001B9D3E /* AudioPlayerVM.swift */,
 			);
 			path = "Audio Managers";
 			sourceTree = "<group>";
@@ -176,6 +255,63 @@
 				4567B75923683F93001B9D3E /* Extensions.swift */,
 			);
 			path = Div;
+			sourceTree = "<group>";
+		};
+		F0C0CC7126D4E42C002C99F4 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC7226D4E445002C99F4 /* RecordingRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		F0C0CC7426D4E67D002C99F4 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				4567B75723683F93001B9D3E /* HomeView.swift */,
+				4567B75C23683F93001B9D3E /* RecordingsList.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F0C0CC7526D4E712002C99F4 /* RecordingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC7626D4E740002C99F4 /* RecordingDetail.swift */,
+			);
+			path = RecordingDetail;
+			sourceTree = "<group>";
+		};
+		F0C0CC8126D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC8226D4EE25002C99F4 /* Interface.storyboard */,
+				F0C0CC8526D4EE26002C99F4 /* Assets.xcassets */,
+				F0C0CC8726D4EE26002C99F4 /* Info.plist */,
+			);
+			path = "VoiceRecorder watchOS WatchKit App";
+			sourceTree = "<group>";
+		};
+		F0C0CC9026D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC9126D4EE26002C99F4 /* HostingController.swift */,
+				F0C0CC9326D4EE26002C99F4 /* ContentView.swift */,
+				F0C0CC9526D4EE26002C99F4 /* ExtensionDelegate.swift */,
+				F0C0CC9726D4EE26002C99F4 /* ComplicationController.swift */,
+				F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */,
+				F0C0CC9E26D4EE27002C99F4 /* Info.plist */,
+				F0C0CC9B26D4EE27002C99F4 /* Preview Content */,
+			);
+			path = "VoiceRecorder watchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F0C0CC9B26D4EE27002C99F4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,13 +370,64 @@
 			productReference = 4567B74523683F76001B9D3E /* VoiceRecorderFinishedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F0C0CC7926D4EE25002C99F4 /* VoiceRecorder watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0C0CCA726D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS" */;
+			buildPhases = (
+				F0C0CC7826D4EE25002C99F4 /* Resources */,
+				F0C0CCA626D4EE27002C99F4 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0C0CC8026D4EE25002C99F4 /* PBXTargetDependency */,
+			);
+			name = "VoiceRecorder watchOS";
+			productName = "VoiceRecorder watchOS";
+			productReference = F0C0CC7A26D4EE25002C99F4 /* VoiceRecorder watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		F0C0CC7C26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0C0CCA326D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS WatchKit App" */;
+			buildPhases = (
+				F0C0CC7B26D4EE25002C99F4 /* Resources */,
+				F0C0CCA226D4EE27002C99F4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0C0CC8F26D4EE26002C99F4 /* PBXTargetDependency */,
+			);
+			name = "VoiceRecorder watchOS WatchKit App";
+			productName = "VoiceRecorder watchOS WatchKit App";
+			productReference = F0C0CC7D26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F0C0CC8B26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0C0CC9F26D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS WatchKit Extension" */;
+			buildPhases = (
+				F0C0CC8826D4EE26002C99F4 /* Sources */,
+				F0C0CC8926D4EE26002C99F4 /* Frameworks */,
+				F0C0CC8A26D4EE26002C99F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VoiceRecorder watchOS WatchKit Extension";
+			productName = "VoiceRecorder watchOS WatchKit Extension";
+			productReference = F0C0CC8C26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4567B71C23683F74001B9D3E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Andreas Schultz";
 				TargetAttributes = {
@@ -254,6 +441,15 @@
 					4567B74423683F76001B9D3E = {
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = 4567B72323683F74001B9D3E;
+					};
+					F0C0CC7926D4EE25002C99F4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F0C0CC7C26D4EE25002C99F4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F0C0CC8B26D4EE26002C99F4 = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
@@ -273,6 +469,9 @@
 				4567B72323683F74001B9D3E /* VoiceRecorderFinished */,
 				4567B73923683F76001B9D3E /* VoiceRecorderFinishedTests */,
 				4567B74423683F76001B9D3E /* VoiceRecorderFinishedUITests */,
+				F0C0CC7926D4EE25002C99F4 /* VoiceRecorder watchOS */,
+				F0C0CC7C26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App */,
+				F0C0CC8B26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +501,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0C0CC7826D4EE25002C99F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0C0CC7B26D4EE25002C99F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0C0CC8626D4EE26002C99F4 /* Assets.xcassets in Resources */,
+				F0C0CC8426D4EE25002C99F4 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0C0CC8A26D4EE26002C99F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0C0CC9D26D4EE27002C99F4 /* Preview Assets.xcassets in Resources */,
+				F0C0CC9A26D4EE27002C99F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -311,13 +535,15 @@
 			files = (
 				4567B75F23683F93001B9D3E /* Extensions.swift in Sources */,
 				4567B76123683F93001B9D3E /* Helper.swift in Sources */,
-				4567B76723688406001B9D3E /* AudioPlayer.swift in Sources */,
+				4567B76723688406001B9D3E /* AudioPlayerVM.swift in Sources */,
 				4567B72823683F74001B9D3E /* AppDelegate.swift in Sources */,
+				F0C0CC7326D4E445002C99F4 /* RecordingRow.swift in Sources */,
 				4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */,
+				F0C0CC7726D4E740002C99F4 /* RecordingDetail.swift in Sources */,
 				4567B72A23683F74001B9D3E /* SceneDelegate.swift in Sources */,
 				4567B76023683F93001B9D3E /* RecordingDataModel.swift in Sources */,
 				4567B75E23683F93001B9D3E /* AudioRecorder.swift in Sources */,
-				4567B75D23683F93001B9D3E /* ContentView.swift in Sources */,
+				4567B75D23683F93001B9D3E /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +563,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0C0CC8826D4EE26002C99F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0C0CC9426D4EE26002C99F4 /* ContentView.swift in Sources */,
+				F0C0CC9826D4EE26002C99F4 /* ComplicationController.swift in Sources */,
+				F0C0CC9226D4EE26002C99F4 /* HostingController.swift in Sources */,
+				F0C0CC9626D4EE26002C99F4 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -350,6 +587,16 @@
 			target = 4567B72323683F74001B9D3E /* VoiceRecorderFinished */;
 			targetProxy = 4567B74623683F76001B9D3E /* PBXContainerItemProxy */;
 		};
+		F0C0CC8026D4EE25002C99F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0C0CC7C26D4EE25002C99F4 /* VoiceRecorder watchOS WatchKit App */;
+			targetProxy = F0C0CC7F26D4EE25002C99F4 /* PBXContainerItemProxy */;
+		};
+		F0C0CC8F26D4EE26002C99F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0C0CC8B26D4EE26002C99F4 /* VoiceRecorder watchOS WatchKit Extension */;
+			targetProxy = F0C0CC8E26D4EE26002C99F4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -359,6 +606,14 @@
 				4567B73323683F75001B9D3E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F0C0CC8226D4EE25002C99F4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0C0CC8326D4EE25002C99F4 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -487,6 +742,7 @@
 				DEVELOPMENT_TEAM = Q5Q99Q7248;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VoiceRecorderFinished/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -507,6 +763,7 @@
 				DEVELOPMENT_TEAM = Q5Q99Q7248;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VoiceRecorderFinished/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +859,126 @@
 			};
 			name = Release;
 		};
+		F0C0CCA026D4EE27002C99F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceRecorder watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "VoiceRecorder watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		F0C0CCA126D4EE27002C99F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VoiceRecorder watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "VoiceRecorder watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		F0C0CCA426D4EE27002C99F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				IBSC_MODULE = VoiceRecorder_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "VoiceRecorder watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		F0C0CCA526D4EE27002C99F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				IBSC_MODULE = VoiceRecorder_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "VoiceRecorder watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		F0C0CCA826D4EE27002C99F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F0C0CCA926D4EE27002C99F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "avaconsult.org.VoiceRecorder-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -637,6 +1014,33 @@
 			buildConfigurations = (
 				4567B75523683F76001B9D3E /* Debug */,
 				4567B75623683F76001B9D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0C0CC9F26D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C0CCA026D4EE27002C99F4 /* Debug */,
+				F0C0CCA126D4EE27002C99F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0C0CCA326D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C0CCA426D4EE27002C99F4 /* Debug */,
+				F0C0CCA526D4EE27002C99F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0C0CCA726D4EE27002C99F4 /* Build configuration list for PBXNativeTarget "VoiceRecorder watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C0CCA826D4EE27002C99F4 /* Debug */,
+				F0C0CCA926D4EE27002C99F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
