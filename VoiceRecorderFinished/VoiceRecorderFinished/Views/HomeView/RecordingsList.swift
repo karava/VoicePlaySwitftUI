@@ -12,7 +12,7 @@ struct RecordingsList: View {
     var body: some View {
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
-                NavigationLink(destination: RecordingDetail(audioURL: recording.fileURL)) {
+                NavigationLink(destination: RecordingDetail(recording: recording)) {
                     Text(recording.fileURL.lastPathComponent)
                 }
             }
