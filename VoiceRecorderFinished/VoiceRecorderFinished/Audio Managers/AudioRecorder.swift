@@ -31,7 +31,8 @@ class AudioRecorder: NSObject,ObservableObject {
         }
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
+//        \(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss"))
+        let audioFilename = documentPath.appendingPathComponent("hello2.wav")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -41,7 +42,7 @@ class AudioRecorder: NSObject,ObservableObject {
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: [:])
             audioRecorder.record()
 
             recording = true

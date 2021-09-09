@@ -22,8 +22,11 @@ struct HomeView: View {
                     }
                 }
             }
-                .navigationBarTitle("Voice recorder")
-                .navigationBarItems(trailing: EditButton())
+            .navigationBarTitle("Voice recorder")
+            .navigationBarItems(
+                leading: NavigationLink(destination: SettingsView()) { Image(systemName:"gear") },
+                trailing: EditButton()
+            )
         }
     }
     

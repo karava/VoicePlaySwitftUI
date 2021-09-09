@@ -6,6 +6,7 @@
 import Foundation
 import SwiftUI
 import AVFoundation
+import Alamofire
 
 class AudioPlayerVM: NSObject, ObservableObject {
     
@@ -64,6 +65,22 @@ class AudioPlayerVM: NSObject, ObservableObject {
         scrubTime(fromSecond)
         DispatchQueue.main.asyncAfter(deadline: .now() + (toSecond - fromSecond)) {
             self.stopPlayback()
+        }
+    }
+    
+    func getSpeakerParts(audioURL: URL) {
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(audioURL, withName: "file")
+        }, to: "http://localhost:5000/speakers")
+        .responseJSON { response in
+            
+            switch response.result {
+            case .success:
+                debugPrint(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+                break
+            }
         }
     }
 }

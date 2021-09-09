@@ -69,6 +69,10 @@ struct RecordingDetail: View {
             
             Text("Speakers:")
             
+            Button("Get speaker parts") {
+                self.audioPlayerVM.getSpeakerParts(audioURL: recording.fileURL)
+            }
+            
             List(RecordingPart.DUMMY_RECORDING_PARTS) { recordingPart in
                 Button {
                     audioPlayerVM.seek(from: recordingPart.startTime, to: recordingPart.endTime)
