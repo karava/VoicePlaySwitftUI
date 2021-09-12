@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var selection: String = "German"
+    @State private var selection: String = "German (Germany)"
     
     private var languages = [
         "Chinese, Mandarin (Simplified, China)":"zh (cmn-Hans-CN)",

@@ -11,6 +11,7 @@ import SwiftUI
 struct RecordingDetail: View {
     var recording: Recording
     @StateObject var audioPlayerVM: AudioPlayerVM = AudioPlayerVM()
+    @State private var recordingParts: [RecordingPart] = []
     
     var formattedDate: String {
         let recordingDate = recording.createdAt
@@ -69,20 +70,32 @@ struct RecordingDetail: View {
             
             Text("Speakers:")
             
-            Button("Get speaker parts") {
-                self.audioPlayerVM.getSpeakerParts(audioURL: recording.fileURL)
-            }
             
-            List(RecordingPart.DUMMY_RECORDING_PARTS) { recordingPart in
-                Button {
-                    audioPlayerVM.seek(from: recordingPart.startTime, to: recordingPart.endTime)
-                } label: {
-                    SpeakerRow(recordingPart: recordingPart)
-                        
+            if audioPlayerVM.isLoading {
+                ProgressView()
+            } else if recordingParts.isEmpty {
+                Button("Get speaker parts") {
+                    self.audioPlayerVM.getSpeakerParts(audioURL: recording.fileURL) { result in
+                        switch result {
+                        case .success(let parts):
+                            self.recordingParts = parts
+                        case .failure(let error):
+                            break
+                        }
+                    }
                 }
-                .foregroundColor(.black)
+            } else {
+                List(recordingParts) { recordingPart in
+                    Button {
+                        audioPlayerVM.seek(from: recordingPart.startTime, to: recordingPart.endTime)
+                    } label: {
+                        SpeakerRow(recordingPart: recordingPart)
+                        
+                    }
+                    .foregroundColor(.black)
+                }
+                .listStyle(InsetGroupedListStyle())
             }
-            .listStyle(InsetGroupedListStyle())
         }
         .onAppear {
             self.audioPlayerVM.startPlayback(audio: recording.fileURL)

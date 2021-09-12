@@ -13,6 +13,7 @@ class AudioPlayerVM: NSObject, ObservableObject {
     @Published var isPlaying = false
     @Published var audioPlayer: AVAudioPlayer!
     @Published var sliderValue: Double = 0
+    @Published var isLoading = false
     
     var timer: Timer?
     
@@ -68,19 +69,36 @@ class AudioPlayerVM: NSObject, ObservableObject {
         }
     }
     
-    func getSpeakerParts(audioURL: URL) {
+    func getSpeakerParts(audioURL: URL, completion: @escaping (_ result: Result<[RecordingPart], Error>) -> Void) {
+        isLoading = true
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(audioURL, withName: "file")
         }, to: "http://localhost:5000/speakers")
         .responseJSON { response in
             
             switch response.result {
-            case .success:
-                debugPrint(response)
+            case .success(let data):
+                let recordingPartsJSON = data as! [NSDictionary]
+                
+                var recordingPartsArray: [RecordingPart] = []
+                
+                recordingPartsJSON.forEach { recordingPartJSON in
+                    guard
+                    let endTime = recordingPartJSON["end_time"] as? Double,
+                    let speakerTag = recordingPartJSON["speaker_tag"] as? Int,
+                    let startTime = recordingPartJSON["start_time"] as? Double
+                    else { completion(.failure(NetworkError.parsingError)); return }
+                    
+                    recordingPartsArray.append(RecordingPart(speakerTag: speakerTag, startTime: startTime, endTime: endTime))
+                }
+                
+                completion(.success(recordingPartsArray))
             case .failure(let error):
                 print(error.localizedDescription)
-                break
+                completion(.failure(error))
             }
+            
+            self.isLoading = false
         }
     }
 }
