@@ -1,4 +1,4 @@
-//AudioRecorder.swift
+//AudioRecorderVM.swift
 
 //Created by BLCKBIRDS on 28.10.19.
 //Visit www.BLCKBIRDS.com for more.
@@ -8,7 +8,7 @@ import SwiftUI
 import AVFoundation
 import Combine
 
-class AudioRecorder: NSObject,ObservableObject {
+class AudioRecorderVM: NSObject,ObservableObject {
     
     override init() {
         super.init()
@@ -20,7 +20,7 @@ class AudioRecorder: NSObject,ObservableObject {
     @Published var recordings = [Recording]()
     @Published var recording = false
     
-    func startRecording() {
+    func startRecording(audioFilename: String) {
         let recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -32,7 +32,7 @@ class AudioRecorder: NSObject,ObservableObject {
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 //        \(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss"))
-        let audioFilename = documentPath.appendingPathComponent(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss") + ".m4a")
+        let audioFilename = documentPath.appendingPathComponent(audioFilename + ".m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -69,7 +69,7 @@ class AudioRecorder: NSObject,ObservableObject {
             recordings.append(recording)
         }
         
-        recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
+        recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})
         
         // objectWillChange.send(self)
     }

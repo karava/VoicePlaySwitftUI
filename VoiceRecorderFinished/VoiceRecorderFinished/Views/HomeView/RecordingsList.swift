@@ -7,7 +7,7 @@ import SwiftUI
 
 struct RecordingsList: View {
     
-    @ObservedObject var audioRecorder: AudioRecorder
+    @ObservedObject var audioRecorder: AudioRecorderVM
     
     var body: some View {
         List {
@@ -32,6 +32,6 @@ struct RecordingsList: View {
 
 struct RecordingsList_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingsList(audioRecorder: AudioRecorder())
+        RecordingsList(audioRecorder: AudioRecorderVM())
     }
 }

@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State private var selection: String = "German (Germany)"
     
     private var languages = [
-        "Chinese, Mandarin (Simplified, China)":"zh (cmn-Hans-CN)",
+        "Chinese, Mandarin (Simplified, China)":"zh",
         "English (India)":    "en-IN",
         "English (Singapore)":"en-SG",
         "English (United Kingdom)":    "en-GB",

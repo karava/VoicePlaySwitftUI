@@ -15,7 +15,7 @@
 		4567B73F23683F76001B9D3E /* VoiceRecorderFinishedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B73E23683F76001B9D3E /* VoiceRecorderFinishedTests.swift */; };
 		4567B74A23683F76001B9D3E /* VoiceRecorderFinishedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B74923683F76001B9D3E /* VoiceRecorderFinishedUITests.swift */; };
 		4567B75D23683F93001B9D3E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75723683F93001B9D3E /* HomeView.swift */; };
-		4567B75E23683F93001B9D3E /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75823683F93001B9D3E /* AudioRecorder.swift */; };
+		4567B75E23683F93001B9D3E /* AudioRecorderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75823683F93001B9D3E /* AudioRecorderVM.swift */; };
 		4567B75F23683F93001B9D3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75923683F93001B9D3E /* Extensions.swift */; };
 		4567B76023683F93001B9D3E /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75A23683F93001B9D3E /* Recording.swift */; };
 		4567B76123683F93001B9D3E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75B23683F93001B9D3E /* Helper.swift */; };
@@ -39,6 +39,8 @@
 		F0C0CC9826D4EE26002C99F4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9726D4EE26002C99F4 /* ComplicationController.swift */; };
 		F0C0CC9A26D4EE27002C99F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */; };
 		F0C0CC9D26D4EE27002C99F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */; };
+		F0FB05DF26F1D76F00D4E9F0 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */; };
+		F0FB05E326F1EB0500D4E9F0 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB05E226F1EB0500D4E9F0 /* FolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +114,7 @@
 		4567B74923683F76001B9D3E /* VoiceRecorderFinishedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderFinishedUITests.swift; sourceTree = "<group>"; };
 		4567B74B23683F76001B9D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4567B75723683F93001B9D3E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		4567B75823683F93001B9D3E /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		4567B75823683F93001B9D3E /* AudioRecorderVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderVM.swift; sourceTree = "<group>"; };
 		4567B75923683F93001B9D3E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4567B75A23683F93001B9D3E /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		4567B75B23683F93001B9D3E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -138,6 +140,8 @@
 		F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0C0CC9E26D4EE27002C99F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
+		F0FB05E226F1EB0500D4E9F0 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,12 +207,12 @@
 			children = (
 				4567B72723683F74001B9D3E /* AppDelegate.swift */,
 				4567B72923683F74001B9D3E /* SceneDelegate.swift */,
+				4567B76523686ADC001B9D3E /* Utilities */,
 				F07E8F3926EDF931001B3BCD /* Enums */,
 				F098015F26DA31B400C13138 /* Extensions */,
 				F098015C26DA2BA200C13138 /* Model */,
 				4567B76323686A97001B9D3E /* Views */,
-				4567B76423686AAE001B9D3E /* Audio Managers */,
-				4567B76523686ADC001B9D3E /* Div */,
+				4567B76423686AAE001B9D3E /* ViewModel */,
 				4567B72D23683F75001B9D3E /* Assets.xcassets */,
 				4567B73223683F75001B9D3E /* LaunchScreen.storyboard */,
 				4567B73523683F75001B9D3E /* Info.plist */,
@@ -246,7 +250,8 @@
 		4567B76323686A97001B9D3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F0C0CC7126D4E42C002C99F4 /* Rows */,
+				F0FB05E026F1EA7700D4E9F0 /* Components */,
+				F0FB05E126F1EADD00D4E9F0 /* FolderView */,
 				F0C0CC7426D4E67D002C99F4 /* HomeView */,
 				F0C0CC7526D4E712002C99F4 /* RecordingDetail */,
 				F0B8000426E8AA43003E3A27 /* SettingsView */,
@@ -254,22 +259,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4567B76423686AAE001B9D3E /* Audio Managers */ = {
+		4567B76423686AAE001B9D3E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4567B75823683F93001B9D3E /* AudioRecorder.swift */,
+				4567B75823683F93001B9D3E /* AudioRecorderVM.swift */,
 				4567B76623688406001B9D3E /* AudioPlayerVM.swift */,
 			);
-			path = "Audio Managers";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4567B76523686ADC001B9D3E /* Div */ = {
+		4567B76523686ADC001B9D3E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				4567B75B23683F93001B9D3E /* Helper.swift */,
 				4567B75923683F93001B9D3E /* Extensions.swift */,
 			);
-			path = Div;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F07E8F3926EDF931001B3BCD /* Enums */ = {
@@ -361,6 +366,23 @@
 				F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0FB05E026F1EA7700D4E9F0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F0C0CC7126D4E42C002C99F4 /* Rows */,
+				F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F0FB05E126F1EADD00D4E9F0 /* FolderView */ = {
+			isa = PBXGroup;
+			children = (
+				F0FB05E226F1EB0500D4E9F0 /* FolderView.swift */,
+			);
+			path = FolderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,13 +616,15 @@
 				4567B76723688406001B9D3E /* AudioPlayerVM.swift in Sources */,
 				4567B72823683F74001B9D3E /* AppDelegate.swift in Sources */,
 				F098016126DA31CA00C13138 /* Double+Ext.swift in Sources */,
+				F0FB05DF26F1D76F00D4E9F0 /* TextFieldAlert.swift in Sources */,
 				F0C0CC7326D4E445002C99F4 /* RecordingRow.swift in Sources */,
+				F0FB05E326F1EB0500D4E9F0 /* FolderView.swift in Sources */,
 				4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */,
 				F0C0CC7726D4E740002C99F4 /* RecordingDetail.swift in Sources */,
 				4567B72A23683F74001B9D3E /* SceneDelegate.swift in Sources */,
 				F0B8000626E8AA59003E3A27 /* SettingsView.swift in Sources */,
 				4567B76023683F93001B9D3E /* Recording.swift in Sources */,
-				4567B75E23683F93001B9D3E /* AudioRecorder.swift in Sources */,
+				4567B75E23683F93001B9D3E /* AudioRecorderVM.swift in Sources */,
 				F098015B26DA2B7F00C13138 /* SpeakerRow.swift in Sources */,
 				4567B75D23683F93001B9D3E /* HomeView.swift in Sources */,
 				F098015E26DA2BC700C13138 /* RecordingPart.swift in Sources */,
