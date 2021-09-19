@@ -23,7 +23,7 @@ struct RecordingDetail: View {
     
     var body: some View {
         VStack {
-            Text(recording.fileURL.lastPathComponent)
+            Text(recording.getfileURL().lastPathComponent)
             HStack {
                 Text(formattedDate)
                 Spacer()
@@ -51,7 +51,7 @@ struct RecordingDetail: View {
                 
                 if audioPlayerVM.isPlaying == false {
                     Button(action: {
-                        self.audioPlayerVM.startPlayback(audio: recording.fileURL)
+                        self.audioPlayerVM.startPlayback(audio: recording.getfileURL())
                     }) {
                         Image(systemName: "play.circle")
                             .imageScale(.large)
@@ -75,7 +75,7 @@ struct RecordingDetail: View {
                 ProgressView()
             } else if recordingParts.isEmpty {
                 Button("Get speaker parts") {
-                    self.audioPlayerVM.getSpeakerParts(audioURL: recording.fileURL) { result in
+                    self.audioPlayerVM.getSpeakerParts(audioURL: recording.getfileURL()) { result in
                         switch result {
                         case .success(let parts):
                             self.recordingParts = parts
@@ -98,7 +98,7 @@ struct RecordingDetail: View {
             }
         }
         .onAppear {
-            self.audioPlayerVM.startPlayback(audio: recording.fileURL)
+            self.audioPlayerVM.startPlayback(audio: recording.getfileURL())
             // (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.requestFeedback()
         }
     }

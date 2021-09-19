@@ -65,8 +65,8 @@ class AudioRecorderVM: NSObject,ObservableObject {
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
         for audio in directoryContents {
-            let recording = Recording(fileURL: audio, createdAt: getCreationDate(for: audio))
-            recordings.append(recording)
+//            let recording = Recording(fileURL: audio, createdAt: getCreationDate(for: audio))
+//            recordings.append(recording)
         }
         
         recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending})

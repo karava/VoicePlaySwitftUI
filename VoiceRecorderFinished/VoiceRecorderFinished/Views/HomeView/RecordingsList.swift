@@ -6,14 +6,19 @@
 import SwiftUI
 
 struct RecordingsList: View {
+    @FetchRequest(entity: Recording.entity(),
+                  sortDescriptors: [
+                    NSSortDescriptor(keyPath: \Recording.createdAt, ascending: true)
+                  ])
+    private var recordings: FetchedResults<Recording>
     
     @ObservedObject var audioRecorder: AudioRecorderVM
     
     var body: some View {
         List {
-            ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
+            ForEach(recordings, id: \.createdAt) { (recording: Recording) in
                 NavigationLink(destination: RecordingDetail(recording: recording)) {
-                    Text(recording.fileURL.lastPathComponent)
+                    Text(recording.getfileURL().lastPathComponent)
                 }
             }
             .onDelete(perform: delete)
@@ -24,7 +29,7 @@ struct RecordingsList: View {
         
         var urlsToDelete = [URL]()
         for index in offsets {
-            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
+            urlsToDelete.append(audioRecorder.recordings[index].getfileURL())
         }
         audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
     }
