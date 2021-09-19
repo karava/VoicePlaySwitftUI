@@ -21,6 +21,7 @@
 		4567B76123683F93001B9D3E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75B23683F93001B9D3E /* Helper.swift */; };
 		4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B75C23683F93001B9D3E /* RecordingsList.swift */; };
 		4567B76723688406001B9D3E /* AudioPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567B76623688406001B9D3E /* AudioPlayerVM.swift */; };
+		F0319D7226F710BE002AA125 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0319D7126F710BE002AA125 /* Alert.swift */; };
 		F07E8F3B26EDF943001B3BCD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E8F3A26EDF943001B3BCD /* NetworkError.swift */; };
 		F098015B26DA2B7F00C13138 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F098015A26DA2B7F00C13138 /* SpeakerRow.swift */; };
 		F098015E26DA2BC700C13138 /* RecordingPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F098015D26DA2BC700C13138 /* RecordingPart.swift */; };
@@ -39,7 +40,6 @@
 		F0C0CC9826D4EE26002C99F4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C0CC9726D4EE26002C99F4 /* ComplicationController.swift */; };
 		F0C0CC9A26D4EE27002C99F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */; };
 		F0C0CC9D26D4EE27002C99F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */; };
-		F0FB05DF26F1D76F00D4E9F0 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */; };
 		F0FB05E326F1EB0500D4E9F0 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB05E226F1EB0500D4E9F0 /* FolderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +120,7 @@
 		4567B75B23683F93001B9D3E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4567B75C23683F93001B9D3E /* RecordingsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
 		4567B76623688406001B9D3E /* AudioPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerVM.swift; sourceTree = "<group>"; };
+		F0319D7126F710BE002AA125 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F07E8F3A26EDF943001B3BCD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F098015A26DA2B7F00C13138 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
 		F098015D26DA2BC700C13138 /* RecordingPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPart.swift; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		F0C0CC9926D4EE27002C99F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0C0CC9C26D4EE27002C99F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0C0CC9E26D4EE27002C99F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
 		F0FB05E226F1EB0500D4E9F0 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				F07E8F3A26EDF943001B3BCD /* NetworkError.swift */,
+				F0319D7126F710BE002AA125 /* Alert.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -372,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				F0C0CC7126D4E42C002C99F4 /* Rows */,
-				F0FB05DE26F1D76F00D4E9F0 /* TextFieldAlert.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -615,8 +615,8 @@
 				4567B76123683F93001B9D3E /* Helper.swift in Sources */,
 				4567B76723688406001B9D3E /* AudioPlayerVM.swift in Sources */,
 				4567B72823683F74001B9D3E /* AppDelegate.swift in Sources */,
+				F0319D7226F710BE002AA125 /* Alert.swift in Sources */,
 				F098016126DA31CA00C13138 /* Double+Ext.swift in Sources */,
-				F0FB05DF26F1D76F00D4E9F0 /* TextFieldAlert.swift in Sources */,
 				F0C0CC7326D4E445002C99F4 /* RecordingRow.swift in Sources */,
 				F0FB05E326F1EB0500D4E9F0 /* FolderView.swift in Sources */,
 				4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */,

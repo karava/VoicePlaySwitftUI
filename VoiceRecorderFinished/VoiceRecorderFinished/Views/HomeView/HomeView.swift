@@ -9,59 +9,52 @@ struct HomeView: View {
     @StateObject private var audioRecorder = AudioRecorderVM()
     @State private var showAlert = false
     @State private var fileName: String?
+    @State private var textFieldText = ""
     
     var body: some View {
         ZStack {
-                VStack {
-                    RecordingsList(audioRecorder: audioRecorder)
-                    if audioRecorder.recording == false {
-                        Button(action: {
-                            self.fileName = Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")
-                            audioRecorder.startRecording(audioFilename: fileName!)
-                        }) {
-                            getStartStopImage(systemName: "circle.fill")
-                        }
-                    } else {
-                        Button(action: {
-                            withAnimation(.spring()) {
-                                showAlert = true
-                            }
+            VStack {
+                RecordingsList(audioRecorder: audioRecorder)
+                if audioRecorder.recording == false {
+                    Button(action: {
+                        self.fileName = Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")
+                        audioRecorder.startRecording(audioFilename: fileName!)
+                    }) {
+                        getStartStopImage(systemName: "circle.fill")
+                    }
+                } else {
+                    Button(action: {
+                        Alert.titleMessageTextField(
+                            title: "Change audio name?",
+                            message: "Do you want to change the audio file name?",
+                            placeholder: "Type here...",
+                            defaultText: fileName!,
+                            saveActionBtnTitle: "Update") { audioFilename in
                             
-                            audioRecorder.stopRecording()
-                        }) {
-                            getStartStopImage(systemName: "stop.fill")
+                            do {
+                                let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                                let documentDirectory = URL(fileURLWithPath: path)
+                                let originPath = documentDirectory.appendingPathComponent("\(fileName!).m4a")
+                                let destinationPath = documentDirectory.appendingPathComponent("\(audioFilename).m4a")
+                                try FileManager.default.moveItem(at: originPath, to: destinationPath)
+                                
+                                audioRecorder.fetchRecordings()
+                            } catch {
+                                print(error)
+                            }
                         }
-                    }
-                }
-                .navigationBarTitle("Voice recorder")
-                .navigationBarItems(
-                    leading: NavigationLink(destination: SettingsView()) { Image(systemName:"gear") },
-                    trailing: EditButton()
-                )
-            
-            
-            if showAlert {
-                TextFieldAlert(title: "Change audio name?",
-                               message: "Do you want to change the audio file name?",
-                               textfieldPlaceholder: "Type here...",
-                               defaultText: fileName!
-                ) { audioFilename in
-                    self.showAlert = false
-                    
-                    do {
-                        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-                        let documentDirectory = URL(fileURLWithPath: path)
-                        let originPath = documentDirectory.appendingPathComponent("\(fileName!).m4a")
-                        let destinationPath = documentDirectory.appendingPathComponent("\(audioFilename).m4a")
-                        try FileManager.default.moveItem(at: originPath, to: destinationPath)
                         
-                        audioRecorder.fetchRecordings()
-                    } catch {
-                        print(error)
+                        audioRecorder.stopRecording()
+                    }) {
+                        getStartStopImage(systemName: "stop.fill")
                     }
                 }
-                .opacity(showAlert ? 1 : 0)
             }
+            .navigationBarTitle("Voice recorder")
+            .navigationBarItems(
+                leading: NavigationLink(destination: SettingsView()) { Image(systemName:"gear") },
+                trailing: EditButton()
+            )
         }
     }
     

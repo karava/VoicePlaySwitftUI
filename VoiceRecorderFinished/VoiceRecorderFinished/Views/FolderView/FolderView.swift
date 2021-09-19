@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct FolderView: View {
-    @State private var showAlert = false
     
     var body: some View {
         ZStack {
@@ -30,18 +29,13 @@ struct FolderView: View {
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.bottomBar) {
                         Button(action: {
-                            showAlert = true
+                            Alert.titleMessageTextField(title: "New Folder", message: "Enter a name for this folder", placeholder: "Name", defaultText: "", saveActionBtnTitle: "Create") { folderName in
+                                print(folderName)
+                            }
                         }, label: {
                             Image(systemName: "folder.badge.plus")
                         })
                     }
-                }
-            }
-            
-            if showAlert {
-                TextFieldAlert(title: "New Folder", message: "Enter a name for this folder", textfieldPlaceholder: "Name", defaultText: "") { folderName in 
-                    showAlert = false
-                    
                 }
             }
     
