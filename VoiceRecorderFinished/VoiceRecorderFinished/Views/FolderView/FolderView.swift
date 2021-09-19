@@ -11,34 +11,37 @@ import SwiftUI
 struct FolderView: View {
     
     var body: some View {
-        ZStack {
-            NavigationView  {
-                List {
-                    NavigationLink(destination: HomeView()) {
-                        getRow(title: "All Recordings", systemName: "waveform")
-                    }
-                    
-                    Section(header: Text("My folders")) {
-                        ForEach(["test1", "test2"], id: \.self) { foldername in
-                            getRow(title: foldername, systemName: "folder")
-                        }
-                    }
+        NavigationView  {
+            List {
+                NavigationLink(destination: HomeView()) {
+                    getRow(title: "All Recordings", systemName: "waveform")
                 }
-                .navigationBarTitle(Text("Voice Memos"))
-                .listStyle(InsetGroupedListStyle())
-                .toolbar {
-                    ToolbarItem(placement: ToolbarItemPlacement.bottomBar) {
-                        Button(action: {
-                            Alert.titleMessageTextField(title: "New Folder", message: "Enter a name for this folder", placeholder: "Name", defaultText: "", saveActionBtnTitle: "Create") { folderName in
-                                print(folderName)
-                            }
-                        }, label: {
-                            Image(systemName: "folder.badge.plus")
-                        })
+                
+                Section(header: Text("My folders")) {
+                    ForEach(["test1", "test2"], id: \.self) { foldername in
+                        getRow(title: foldername, systemName: "folder")
                     }
                 }
             }
-    
+            .navigationBarTitle(Text("Voice Memos"))
+            .listStyle(InsetGroupedListStyle())
+            .toolbar {
+                ToolbarItem(placement: ToolbarItemPlacement.bottomBar) {
+                    Button(action: {
+                        Alert.titleMessageTextField(
+                            title: "New Folder",
+                            message: "Enter a name for this folder",
+                            placeholder: "Name",
+                            defaultText: "",
+                            saveActionBtnTitle: "Create"
+                        ) { folderName in
+                            print(folderName)
+                        }
+                    }, label: {
+                        Image(systemName: "folder.badge.plus")
+                    })
+                }
+            }
         }
     }
     
