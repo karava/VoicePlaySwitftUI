@@ -23,6 +23,13 @@ struct HomeView: View {
                 }
             } else {
                 Button(action: {
+                    
+                    let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    let audioFilenamePath = documentPath.appendingPathComponent(fileName! + ".m4a")
+                    
+                    print(audioFilenamePath)
+                    audioRecorder.stopRecording(path: audioFilenamePath)
+                    
                     Alert.titleMessageTextField(
                         title: "Change audio name?",
                         message: "Do you want to change the audio file name?",
@@ -36,14 +43,10 @@ struct HomeView: View {
                             let originPath = documentDirectory.appendingPathComponent("\(fileName!).m4a")
                             let destinationPath = documentDirectory.appendingPathComponent("\(audioFilename).m4a")
                             try FileManager.default.moveItem(at: originPath, to: destinationPath)
-                            
-                            audioRecorder.fetchRecordings()
                         } catch {
                             print(error)
                         }
                     }
-                    
-                    audioRecorder.stopRecording()
                 }) {
                     getStartStopImage(systemName: "stop.fill")
                 }

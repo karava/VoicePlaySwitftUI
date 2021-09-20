@@ -19,6 +19,7 @@ class AudioRecorderVM: NSObject,ObservableObject {
     
     @Published var recordings = [Recording]()
     @Published var recording = false
+    @Environment(\.managedObjectContext) var moc
     
     func startRecording(audioFilename: String) {
         let recordingSession = AVAudioSession.sharedInstance()
@@ -32,7 +33,7 @@ class AudioRecorderVM: NSObject,ObservableObject {
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 //        \(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss"))
-        let audioFilename = documentPath.appendingPathComponent(audioFilename + ".m4a")
+        let audioFilenamePath = documentPath.appendingPathComponent(audioFilename + ".m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -42,20 +43,25 @@ class AudioRecorderVM: NSObject,ObservableObject {
         ]
         
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioFilenamePath, settings: settings)
             audioRecorder.record()
-
             recording = true
+            
         } catch {
             print("Could not start recording")
         }
     }
     
-    func stopRecording() {
+    func stopRecording(path: URL) {
         audioRecorder.stop()
         recording = false
         
-        fetchRecordings()
+        let recording = Recording(context: PersistenceController.instance.container.viewContext)
+        recording.fileURL = path.absoluteString
+        
+        print(path.absoluteString)
+        recording.createdAt = getCreationDate(for: path)
+        PersistenceController.instance.save()
     }
     
     func fetchRecordings() {
@@ -65,6 +71,7 @@ class AudioRecorderVM: NSObject,ObservableObject {
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
         for audio in directoryContents {
+            print(audio)
 //            let recording = Recording(fileURL: audio, createdAt: getCreationDate(for: audio))
 //            recordings.append(recording)
         }
@@ -73,7 +80,8 @@ class AudioRecorderVM: NSObject,ObservableObject {
         
         // objectWillChange.send(self)
     }
-    
+    //file:///Users/kishanarava/Library/Developer/CoreSimulator/Devices/614F7BCA-96D7-437B-93C7-DFE9A2F07051/data/Containers/Data/Application/465DCC84-BE32-4CD3-9FA4-D0DBA559679A/Documents/19-09-21_at_19:23:30.m4a
+    //file:///Users/kishanarava/Library/Developer/CoreSimulator/Devices/614F7BCA-96D7-437B-93C7-DFE9A2F07051/data/Containers/Data/Application/154F1A3A-8208-44DC-9BE6-B0782BF9D9E9/Documents/19-09-21_at_19:23:30.m4a
     func deleteRecording(urlsToDelete: [URL]) {
         
         for url in urlsToDelete {

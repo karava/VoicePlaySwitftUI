@@ -29,6 +29,7 @@ struct PersistenceController {
         if context.hasChanges {
             do {
                 try context.save()
+                print("save correctly")
             } catch {
                 print(error)
             }
