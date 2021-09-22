@@ -23,11 +23,10 @@
 		F0319D7226F710BE002AA125 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0319D7126F710BE002AA125 /* Alert.swift */; };
 		F0319D7526F71CBA002AA125 /* VoiceRecorderFinished.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0319D7326F71CBA002AA125 /* VoiceRecorderFinished.xcdatamodeld */; };
 		F0319D7726F71E03002AA125 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0319D7626F71E03002AA125 /* PersistenceController.swift */; };
-		F0319D9A26F7296F002AA125 /* Recording+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0319D9826F7296F002AA125 /* Recording+CoreDataClass.swift */; };
-		F0319D9B26F7296F002AA125 /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0319D9926F7296F002AA125 /* Recording+CoreDataProperties.swift */; };
+		F07599AE26FB1BB600B5B01F /* Recording+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07599AA26FB1BB600B5B01F /* Recording+CoreDataClass.swift */; };
+		F07599AF26FB1BB600B5B01F /* Recording+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07599AB26FB1BB600B5B01F /* Recording+CoreDataProperties.swift */; };
 		F07E8F3B26EDF943001B3BCD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E8F3A26EDF943001B3BCD /* NetworkError.swift */; };
 		F098015B26DA2B7F00C13138 /* SpeakerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F098015A26DA2B7F00C13138 /* SpeakerRow.swift */; };
-		F098015E26DA2BC700C13138 /* RecordingPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F098015D26DA2BC700C13138 /* RecordingPart.swift */; };
 		F098016126DA31CA00C13138 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F098016026DA31CA00C13138 /* Double+Ext.swift */; };
 		F0B8000126E88F7E003E3A27 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8000026E88F7E003E3A27 /* Alamofire */; };
 		F0B8000626E8AA59003E3A27 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B8000526E8AA59003E3A27 /* SettingsView.swift */; };
@@ -125,11 +124,10 @@
 		F0319D7126F710BE002AA125 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F0319D7426F71CBA002AA125 /* VoiceRecorderFinished.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceRecorderFinished.xcdatamodel; sourceTree = "<group>"; };
 		F0319D7626F71E03002AA125 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		F0319D9826F7296F002AA125 /* Recording+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		F0319D9926F7296F002AA125 /* Recording+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F07599AA26FB1BB600B5B01F /* Recording+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Recording+CoreDataClass.swift"; path = "VoiceRecorderFinished/Model/Recording/Recording+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F07599AB26FB1BB600B5B01F /* Recording+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Recording+CoreDataProperties.swift"; path = "VoiceRecorderFinished/Model/Recording/Recording+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		F07E8F3A26EDF943001B3BCD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F098015A26DA2B7F00C13138 /* SpeakerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerRow.swift; sourceTree = "<group>"; };
-		F098015D26DA2BC700C13138 /* RecordingPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPart.swift; sourceTree = "<group>"; };
 		F098016026DA31CA00C13138 /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		F0B8000526E8AA59003E3A27 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0C0CC7226D4E445002C99F4 /* RecordingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingRow.swift; sourceTree = "<group>"; };
@@ -211,8 +209,6 @@
 		4567B72623683F74001B9D3E /* VoiceRecorderFinished */ = {
 			isa = PBXGroup;
 			children = (
-				F0319D9826F7296F002AA125 /* Recording+CoreDataClass.swift */,
-				F0319D9926F7296F002AA125 /* Recording+CoreDataProperties.swift */,
 				4567B72723683F74001B9D3E /* AppDelegate.swift */,
 				4567B72923683F74001B9D3E /* SceneDelegate.swift */,
 				F0319D7626F71E03002AA125 /* PersistenceController.swift */,
@@ -286,6 +282,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		F07599B126FB1CCA00B5B01F /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				F07599AA26FB1BB600B5B01F /* Recording+CoreDataClass.swift */,
+				F07599AB26FB1BB600B5B01F /* Recording+CoreDataProperties.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
 		F07E8F3926EDF931001B3BCD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +303,7 @@
 		F098015C26DA2BA200C13138 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F098015D26DA2BC700C13138 /* RecordingPart.swift */,
+				F07599B126FB1CCA00B5B01F /* Recording */,
 				F0319D7326F71CBA002AA125 /* VoiceRecorderFinished.xcdatamodeld */,
 			);
 			path = Model;
@@ -626,19 +631,18 @@
 				4567B72823683F74001B9D3E /* AppDelegate.swift in Sources */,
 				F0319D7226F710BE002AA125 /* Alert.swift in Sources */,
 				F098016126DA31CA00C13138 /* Double+Ext.swift in Sources */,
+				F07599AF26FB1BB600B5B01F /* Recording+CoreDataProperties.swift in Sources */,
 				F0C0CC7326D4E445002C99F4 /* RecordingRow.swift in Sources */,
+				F07599AE26FB1BB600B5B01F /* Recording+CoreDataClass.swift in Sources */,
 				F0FB05E326F1EB0500D4E9F0 /* FolderView.swift in Sources */,
 				4567B76223683F93001B9D3E /* RecordingsList.swift in Sources */,
 				F0C0CC7726D4E740002C99F4 /* RecordingDetail.swift in Sources */,
-				F0319D9A26F7296F002AA125 /* Recording+CoreDataClass.swift in Sources */,
 				4567B72A23683F74001B9D3E /* SceneDelegate.swift in Sources */,
-				F0319D9B26F7296F002AA125 /* Recording+CoreDataProperties.swift in Sources */,
 				F0319D7526F71CBA002AA125 /* VoiceRecorderFinished.xcdatamodeld in Sources */,
 				F0B8000626E8AA59003E3A27 /* SettingsView.swift in Sources */,
 				4567B75E23683F93001B9D3E /* AudioRecorderVM.swift in Sources */,
 				F098015B26DA2B7F00C13138 /* SpeakerRow.swift in Sources */,
 				4567B75D23683F93001B9D3E /* HomeView.swift in Sources */,
-				F098015E26DA2BC700C13138 /* RecordingPart.swift in Sources */,
 				F0319D7726F71E03002AA125 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,7 +839,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceRecorderFinished/Preview Content\"";
-				DEVELOPMENT_TEAM = Q5Q99Q7248;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VoiceRecorderFinished/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -843,7 +847,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andreasschultz.VoiceRecorderFinished;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kisharava.VoiceRecorderFinished;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -856,7 +860,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VoiceRecorderFinished/Preview Content\"";
-				DEVELOPMENT_TEAM = Q5Q99Q7248;
+				DEVELOPMENT_TEAM = 4TSKN6NCBG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VoiceRecorderFinished/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -864,7 +868,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.andreasschultz.VoiceRecorderFinished;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kisharava.VoiceRecorderFinished;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

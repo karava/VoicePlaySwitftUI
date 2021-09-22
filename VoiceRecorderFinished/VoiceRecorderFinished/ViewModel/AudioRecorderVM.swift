@@ -19,9 +19,11 @@ class AudioRecorderVM: NSObject,ObservableObject {
     
     @Published var recordings = [Recording]()
     @Published var recording = false
+    @Published var fileName: String?
+    var creationDate: Date?
     @Environment(\.managedObjectContext) var moc
     
-    func startRecording(audioFilename: String) {
+    func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -33,7 +35,11 @@ class AudioRecorderVM: NSObject,ObservableObject {
         
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 //        \(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss"))
-        let audioFilenamePath = documentPath.appendingPathComponent(audioFilename + ".m4a")
+        let dateNow = Date()
+        let fileName = dateNow.toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")
+        self.creationDate = dateNow
+        self.fileName = fileName
+        let audioFilenamePath = documentPath.appendingPathComponent(fileName + ".m4a")
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -52,15 +58,14 @@ class AudioRecorderVM: NSObject,ObservableObject {
         }
     }
     
-    func stopRecording(path: URL) {
+    func stopRecording() {
         audioRecorder.stop()
         recording = false
         
         let recording = Recording(context: PersistenceController.instance.container.viewContext)
-        recording.fileURL = path.absoluteString
-        
-        print(path.absoluteString)
-        recording.createdAt = getCreationDate(for: path)
+        recording.fileName = fileName!
+            
+        recording.createdAt = creationDate!
         PersistenceController.instance.save()
     }
     

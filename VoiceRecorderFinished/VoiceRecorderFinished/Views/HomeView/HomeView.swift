@@ -6,47 +6,28 @@
 import SwiftUI
 
 struct HomeView: View {
+    @FetchRequest(entity: Recording.entity(),
+                  sortDescriptors: [
+                    NSSortDescriptor(keyPath: \Recording.createdAt, ascending: true)
+                  ])
+    private var recordings: FetchedResults<Recording>
+    
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var audioRecorder = AudioRecorderVM()
     @State private var showAlert = false
-    @State private var fileName: String?
     @State private var textFieldText = ""
     
     var body: some View {
         VStack {
-            RecordingsList(audioRecorder: audioRecorder)
+            RecordingsList(audioRecorder: audioRecorder, recordings: self.recordings)
             if audioRecorder.recording == false {
-                Button(action: {
-                    self.fileName = Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")
-                    audioRecorder.startRecording(audioFilename: fileName!)
-                }) {
+                Button(action: audioRecorder.startRecording) {
                     getStartStopImage(systemName: "circle.fill")
                 }
             } else {
                 Button(action: {
-                    
-                    let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                    let audioFilenamePath = documentPath.appendingPathComponent(fileName! + ".m4a")
-                    
-                    print(audioFilenamePath)
-                    audioRecorder.stopRecording(path: audioFilenamePath)
-                    
-                    Alert.titleMessageTextField(
-                        title: "Change audio name?",
-                        message: "Do you want to change the audio file name?",
-                        placeholder: "Type here...",
-                        defaultText: fileName!,
-                        saveActionBtnTitle: "Update") { audioFilename in
-                        
-                        do {
-                            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-                            let documentDirectory = URL(fileURLWithPath: path)
-                            let originPath = documentDirectory.appendingPathComponent("\(fileName!).m4a")
-                            let destinationPath = documentDirectory.appendingPathComponent("\(audioFilename).m4a")
-                            try FileManager.default.moveItem(at: originPath, to: destinationPath)
-                        } catch {
-                            print(error)
-                        }
-                    }
+                    audioRecorder.stopRecording()
+                    showTextFieldAlert()
                 }) {
                     getStartStopImage(systemName: "stop.fill")
                 }
@@ -67,6 +48,32 @@ struct HomeView: View {
             .clipped()
             .foregroundColor(.red)
             .padding(.bottom, 40)
+    }
+    
+    func showTextFieldAlert() {
+        Alert.titleMessageTextField(
+            title: "Change audio name?",
+            message: "Do you want to change the audio file name?",
+            placeholder: "Type here...",
+            defaultText: audioRecorder.fileName!,
+            saveActionBtnTitle: "Update") { audioFilename in
+            
+            do {
+                let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                let documentDirectory = URL(fileURLWithPath: path)
+                let originPath = documentDirectory.appendingPathComponent("\(audioRecorder.fileName!).m4a")
+                let destinationPath = documentDirectory.appendingPathComponent("\(audioFilename).m4a")
+                try FileManager.default.moveItem(at: originPath, to: destinationPath)
+            } catch {
+                print(error)
+            }
+            
+            viewContext.performAndWait {
+                self.recordings.last?.fileName = audioFilename
+                
+                PersistenceController.instance.save()
+            }
+        }
     }
 }
 

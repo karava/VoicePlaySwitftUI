@@ -69,7 +69,7 @@ class AudioPlayerVM: NSObject, ObservableObject {
         }
     }
     
-    func getSpeakerParts(audioURL: URL, completion: @escaping (_ result: Result<[RecordingPart], Error>) -> Void) {
+    func getSpeakerParts(audioURL: URL, recording: Recording, completion: @escaping (_ result: Result<[RecordingPart], Error>) -> Void) {
         isLoading = true
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(audioURL, withName: "file")
@@ -89,9 +89,15 @@ class AudioPlayerVM: NSObject, ObservableObject {
                     let startTime = recordingPartJSON["start_time"] as? Double
                     else { completion(.failure(NetworkError.parsingError)); return }
                     
-                    recordingPartsArray.append(RecordingPart(speakerTag: speakerTag, startTime: startTime, endTime: endTime))
+                    let part = RecordingPart(context: PersistenceController.instance.container.viewContext)
+                    part.speakerTag = Int16(speakerTag)
+                    part.startTime = startTime
+                    part.endTime = endTime
+                    part.recording = recording
+                    recordingPartsArray.append(part)
                 }
                 
+                PersistenceController.instance.save()
                 completion(.success(recordingPartsArray))
             case .failure(let error):
                 print(error.localizedDescription)

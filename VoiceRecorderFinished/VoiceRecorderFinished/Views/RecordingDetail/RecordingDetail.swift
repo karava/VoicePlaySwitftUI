@@ -11,7 +11,9 @@ import SwiftUI
 struct RecordingDetail: View {
     var recording: Recording
     @StateObject var audioPlayerVM: AudioPlayerVM = AudioPlayerVM()
-    @State private var recordingParts: [RecordingPart] = []
+    
+//    @FetchRequest(entity: RecordingPart.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \.startTime, ascending: true)])
+//    private var recordingParts: ResultsRecordingPart] = []
     
     var formattedDate: String {
         let recordingDate = recording.createdAt
@@ -23,7 +25,7 @@ struct RecordingDetail: View {
     
     var body: some View {
         VStack {
-            Text(recording.getfileURL().lastPathComponent)
+            Text(recording.fileName)
             HStack {
                 Text(formattedDate)
                 Spacer()
@@ -31,7 +33,9 @@ struct RecordingDetail: View {
             }
             .padding()
             
-            Slider(value: .constant(audioPlayerVM.audioPlayer?.currentTime ?? 0), in: 0...(audioPlayerVM.audioPlayer?.duration ?? 0), onEditingChanged: { isSliding in
+            Slider(value: $audioPlayerVM.sliderValue,
+                   in: 0...(audioPlayerVM.audioPlayer?.duration ?? 0),
+                   onEditingChanged: { isSliding in
                 if !isSliding {
                     audioPlayerVM.scrubTime()
                 }
@@ -51,7 +55,7 @@ struct RecordingDetail: View {
                 
                 if audioPlayerVM.isPlaying == false {
                     Button(action: {
-                        self.audioPlayerVM.startPlayback(audio: recording.getfileURL())
+                        self.audioPlayerVM.startPlayback(audio: recording.fileURL)
                     }) {
                         Image(systemName: "play.circle")
                             .imageScale(.large)
@@ -73,24 +77,26 @@ struct RecordingDetail: View {
             
             if audioPlayerVM.isLoading {
                 ProgressView()
-            } else if recordingParts.isEmpty {
+            } else if recording.recordingParts?.count == 0 {
                 Button("Get speaker parts") {
-                    self.audioPlayerVM.getSpeakerParts(audioURL: recording.getfileURL()) { result in
+                    self.audioPlayerVM.getSpeakerParts(audioURL: recording.fileURL, recording: recording) { result in
                         switch result {
                         case .success(let parts):
-                            self.recordingParts = parts
+                            parts.forEach { recordingPart in
+                                self.recording.addToRecordingParts(recordingPart)
+                            }
                         case .failure(let error):
                             break
                         }
                     }
                 }
             } else {
-                List(recordingParts) { recordingPart in
+                List(Array(recording.recordingParts as! Set<RecordingPart>)) { recordingPart in
                     Button {
                         audioPlayerVM.seek(from: recordingPart.startTime, to: recordingPart.endTime)
                     } label: {
                         SpeakerRow(recordingPart: recordingPart)
-                        
+
                     }
                     .foregroundColor(.black)
                 }
@@ -98,7 +104,7 @@ struct RecordingDetail: View {
             }
         }
         .onAppear {
-            self.audioPlayerVM.startPlayback(audio: recording.getfileURL())
+            self.audioPlayerVM.startPlayback(audio: recording.fileURL)
             // (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.requestFeedback()
         }
     }
